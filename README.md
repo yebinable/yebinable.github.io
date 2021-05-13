@@ -1,2 +1,0 @@
-# yebinable.github.io
-Blog
