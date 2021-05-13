@@ -16,11 +16,11 @@ minimal_mistakes_skin    : "dark" # "default" "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "YEBIN's Logs"
+title                    : "YEBIN-ABLE"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "가장 나다운 공간" # site tagline that appears below site title in masthead
 name                     : "Yebin"
-description              : "An amazing website."
+description              : ""
 url                      : "https://yebinable.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "yebinable/yebinable.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -94,52 +94,40 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Yebin Choi"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "Work as Web-Developer, Love tools, Love my family"
+  location         : "Seoul, Republic of Korea"
+  email            : "yebinable@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:yebinable@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      url: "https://yebinable.github.io"
+   # - label: "Twitter"
+     # icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+   # - label: "Facebook"
+      # icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+      url: "https://github.com/yebinable"
+   # - label: "Instagram"
+    # icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://yebinable.github.io"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://github.com/yebinable"
 
 
 # Reading Files
