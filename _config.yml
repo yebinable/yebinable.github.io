@@ -98,27 +98,17 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Work as Web-Developer, Love tools, Love my family"
   location         : "Seoul, Republic of Korea"
-  email            : "yebinable@gmail.com"
   links:
-    - label: "Email"
+    - label: "Email: yebinable@gmail.com"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:yebinable@gmail.com"
-    - label: "Website"
+    - label: "Website: yebinable.github.io"
       icon: "fas fa-fw fa-link"
       url: "https://yebinable.github.io"
-   # - label: "Twitter"
-     # icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-   # - label: "Facebook"
-      # icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
+    - label: "GitHub: github.com/yebinable"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/yebinable"
-   # - label: "Instagram"
-    # icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
-
+      
 # Site Footer
 footer:
   links:
@@ -128,7 +118,6 @@ footer:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       url: "https://github.com/yebinable"
-
 
 # Reading Files
 include:
