@@ -12,7 +12,7 @@ permalink: /
 - Work as `web developer` since Nov 2018
 
 ### I do
-- `C#`, `Java`, `Javascript`, `.net`, `JQuery`, `Spring`, `Angular` 
+- `C#`, `Java`, `Javascript`, `MSSQL`, `MongoDB`, `.net`, `JQuery`, `Spring`, `Angular`
 
 ### What else..
 - Live in, work at `Seoul`, Republic of Korea
