@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CSharp
-parant: Dev
+parent: Dev
 has_children: true
 ---
 # CSharp

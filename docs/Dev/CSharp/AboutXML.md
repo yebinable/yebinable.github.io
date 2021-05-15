@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About XML
-parant: CSharp
+parent: CSharp
 grand_parent: Dev
 ---
 
