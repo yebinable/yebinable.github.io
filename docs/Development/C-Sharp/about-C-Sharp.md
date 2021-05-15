@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Who Am I?
-nav_order: 2
+title: About C#
 parant: C#
+nav_order: 2
 ---
 
 ## C#
