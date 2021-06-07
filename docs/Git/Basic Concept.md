@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Basic Concept
+title: Git Main
 parent: Git
 ---
 
-# 깃허브 기본 개념 정리
+# 깃허브 테스트
 
