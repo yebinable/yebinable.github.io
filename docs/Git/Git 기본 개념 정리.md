@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Git 기본 개념 정리
+parent: Git
 ---
 
 # Git Command 개념 정리

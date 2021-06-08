@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Update Arrays in a Document
+parent: MongoDB
 ---
 
 # Document 내 Array를 업데이트 할 때
