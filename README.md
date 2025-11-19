@@ -1,2 +1,1 @@
-# Wi Pages
-- 
+# Wiki Pages
