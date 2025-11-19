@@ -3,6 +3,7 @@ title: Git Submodule로 하나의 Obsidian Vault에서 여러 개의 git reposit
 date: 2025-11-19
 tags:
   - git
+  - obsidian
 description:
 ---
 ## 문제 상황 
