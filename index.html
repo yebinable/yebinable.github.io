@@ -1,0 +1,70 @@
+﻿---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">개발자로 성장하는<br>여정을 기록합니다.</h1>
+      <p class="hero-description">
+        코드와 함께 배우고, 문제를 해결하며, 더 나은 개발자가 되어가는 과정을 공유합니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">최신 글</h2>
+      {% if site.posts.size > paginator.per_page %}
+      <a href="{{ '/archive' | relative_url }}" class="view-all">전체보기</a>
+      {% endif %}
+    </div>
+    
+    <div class="posts-list">
+      {% for post in paginator.posts %}
+      <article class="post-item">
+        <div class="post-item-header">
+          <h3 class="post-item-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          {% if post.tags %}
+          <div class="post-item-tags">
+            {% for tag in post.tags limit:2 %}
+            <a href="{{ site.baseurl }}/tags#{{ tag }}" class="tag">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <div class="post-item-footer">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y년 %m월 %d일" }}
+          </time>
+          <a href="{{ post.url | relative_url }}" class="read-more-link">읽기 →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn">← 이전</a>
+      {% else %}
+      <span class="pagination-btn disabled">← 이전</span>
+      {% endif %}
+      
+      <span class="pagination-page">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+      
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn">다음 →</a>
+      {% else %}
+      <span class="pagination-btn disabled">다음 →</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>

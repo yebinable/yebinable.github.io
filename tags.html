@@ -1,0 +1,151 @@
+﻿---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<section class="tags-page">
+  <div class="container-narrow">
+    <header class="page-header">
+      <h1 class="page-title">Tags</h1>
+      <p class="page-description">주제별로 글을 찾아보세요.</p>
+    </header>
+
+    {% capture tags %}
+      {% for tag in site.tags %}
+        {{ tag[0] }}
+      {% endfor %}
+    {% endcapture %}
+    {% assign sorted_tags = tags | split:' ' | sort %}
+
+    <div class="tags-cloud">
+      {% for tag in sorted_tags %}
+        {% assign tag_posts = site.tags[tag] %}
+        <a href="#{{ tag | slugify }}" class="tag-cloud-item">
+          {{ tag }} <span class="tag-count">{{ tag_posts.size }}</span>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="tags-list">
+      {% for tag in sorted_tags %}
+        {% assign tag_posts = site.tags[tag] %}
+        <section class="tag-section" id="{{ tag | slugify }}">
+          <h2 class="tag-section-title">
+            {{ tag }} <span class="tag-section-count">({{ tag_posts.size }})</span>
+          </h2>
+          <div class="tag-posts">
+            {% for post in tag_posts %}
+            <article class="tag-post-item">
+              <h3 class="tag-post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y년 %m월 %d일" }}
+              </time>
+            </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.tags-page {
+  padding: 80px 0 120px;
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 64px;
+  padding: 32px;
+  background: var(--bg-light);
+  border-radius: 16px;
+}
+
+.tag-cloud-item {
+  background: var(--bg-white);
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag-cloud-item:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.tag-count {
+  background: var(--bg-light);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.tag-section {
+  margin-bottom: 56px;
+}
+
+.tag-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tag-section-count {
+  font-size: 18px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.tag-posts {
+  display: grid;
+  gap: 20px;
+}
+
+.tag-post-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tag-post-item:last-child {
+  border-bottom: none;
+}
+
+.tag-post-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tag-post-title a {
+  color: var(--text-dark);
+}
+
+.tag-post-title a:hover {
+  color: var(--primary-color);
+}
+
+.tag-post-item time {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+</style>

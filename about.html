@@ -1,0 +1,146 @@
+﻿---
+layout: default
+title: About
+permalink: /about/
+---
+
+<section class="about-page">
+  <div class="container-narrow">
+    <header class="page-header">
+      <h1 class="page-title">About Me</h1>
+    </header>
+
+    <div class="about-content">
+      <div class="about-intro">
+        <h2>안녕하세요! 👋</h2>
+        <p>
+          저는 개발을 배우고 성장하는 과정을 즐기는 개발자입니다. 
+          이 블로그는 제가 배운 것들, 해결한 문제들, 그리고 개발하면서 얻은 인사이트를 기록하는 공간입니다.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h3>관심 분야</h3>
+        <ul>
+          <li>웹 개발 (Frontend & Backend)</li>
+          <li>소프트웨어 아키텍처</li>
+          <li>개발 생산성과 도구</li>
+          <li>기술 트렌드와 베스트 프랙티스</li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <h3>블로그 소개</h3>
+        <p>
+          이 블로그에서는 다음과 같은 내용을 다룹니다:
+        </p>
+        <ul>
+          <li>개발하면서 마주친 문제와 해결 과정</li>
+          <li>새로 배운 기술과 개념 정리</li>
+          <li>프로젝트 경험과 회고</li>
+          <li>개발 도구와 팁</li>
+        </ul>
+      </div>
+
+      <div class="about-section">
+        <h3>연락하기</h3>
+        <p>
+          궁금한 점이나 함께 이야기하고 싶은 주제가 있다면 언제든 연락주세요!
+        </p>
+        <div class="contact-links">
+          {% for social in site.social %}
+          <a href="{{ social.link }}" target="_blank" rel="noopener noreferrer" class="contact-link">
+            {{ social.icon }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.about-page {
+  padding: 80px 0 120px;
+}
+
+.about-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.about-intro {
+  margin-bottom: 48px;
+}
+
+.about-intro h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-dark);
+}
+
+.about-section {
+  margin-bottom: 48px;
+}
+
+.about-section h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.about-section p {
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section li {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  color: var(--text-gray);
+}
+
+.about-section li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.contact-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contact-link {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  border: 1px solid var(--border-light);
+  text-transform: capitalize;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.contact-link:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+</style>

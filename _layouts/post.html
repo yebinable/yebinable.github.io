@@ -1,0 +1,62 @@
+﻿---
+layout: default
+---
+
+<article class="post">
+  <div class="container-narrow">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%Y년 %m월 %d일" }}
+        </time>
+        {% if page.tags %}
+        <span class="post-tags">
+          {% for tag in page.tags %}
+          <a href="{{ site.baseurl }}/tags#{{ tag }}" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </div>
+      
+      <h1 class="post-title">{{ page.title }}</h1>
+      
+      {% if page.description %}
+      <p class="post-subtitle">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags %}
+    <footer class="post-footer">
+      <div class="post-tags-list">
+        {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags#{{ tag }}" class="tag-large">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </footer>
+    {% endif %}
+  </div>
+</article>
+
+{% if site.related_posts.size > 0 %}
+<section class="related-posts">
+  <div class="container">
+    <h2 class="section-title">관련 글</h2>
+    <div class="posts-grid-small">
+      {% for post in site.related_posts limit:3 %}
+      <article class="post-card-small">
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y년 %m월 %d일" }}
+        </time>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
