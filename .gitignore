@@ -1,0 +1,20 @@
+﻿# Jekyll 빌드 파일
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Obsidian 제외
+*.md
+!README.md
+!POSTING_GUIDE.md
