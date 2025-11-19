@@ -25,6 +25,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 # Pagination
 paginate: 9
