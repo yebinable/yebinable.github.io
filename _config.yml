@@ -19,7 +19,7 @@ social:
 
 # Build Settings
 markdown: kramdown
-permalink: pretty
+permalink: /:title/
 highlighter: rouge
 plugins:
   - jekyll-paginate
