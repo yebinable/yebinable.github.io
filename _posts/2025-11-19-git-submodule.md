@@ -121,8 +121,8 @@ yebinable.github.io/tech/Git-정리.md 작성 및 저장
 → 1단계: yebinable.github.io 내부 커밋 & 푸시 ✅
 → 2단계: yebinable-private에서 참조 업데이트 & 푸시 ✅
 ```
-### 다른 환경에서 클론 시
 
+### 다른 환경에서 클론 시
 ```bash
 # Submodule까지 함께 클론
 git clone --recursive https://github.com/yebinable/yebinable-private.git
