@@ -4,7 +4,7 @@ date: 2025-11-19
 tags:
   - git
   - obsidian
-description:
+description: Git Submodule을 어떻게 사용하고 왜 사용하게 되었는지를 기록했습니다.
 ---
 ## 문제 상황 
 GitHub로 기술 블로그(Wiki)를 만들고 싶고, Obsidian으로 편하게 관리하고 싶었다. 하지만 다음과 같은 요구사항이 있었다:
