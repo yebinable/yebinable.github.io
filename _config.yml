@@ -31,12 +31,6 @@ plugins:
 paginate: 9
 paginate_path: "/page/:num/"
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /posts/:title/
-
 # Defaults
 defaults:
   - scope:
