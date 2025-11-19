@@ -3,19 +3,17 @@ title: Yebin's Tech Log
 description: 기술과 성장의 기록
 baseurl: ""
 url: "https://yebinable.github.io"
-author: Yebin
+author: 예빈
 
 # Author Settings
-author-name: Yebin
-author-bio: 배우고 성장하는 개발자
-author-intro: 안녕하세요! 배우고 성장하는 개발자입니다.
+author-name: 예빈
+author-bio: 배우고 활용하는 개발자
+author-intro: 안녕하세요! 배우고 활용하는 개발자입니다.
 author-avatar: '/images/avatar.jpg'
 
 # Social Links
 social:
   - {icon: "github", link: "https://github.com/yebinable"}
-  - {icon: "twitter", link: "https://twitter.com/"}
-  - {icon: "linkedin", link: "https://linkedin.com/in/"}
 
 # Build Settings
 markdown: kramdown
@@ -47,4 +45,3 @@ exclude:
   - vendor
   - .git
   - .gitignore
-  - "Git Submodule로 하나의 Obsidian Vault에서 여러 개의 git repository 관리하기.md"
