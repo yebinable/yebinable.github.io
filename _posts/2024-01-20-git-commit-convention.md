@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Git 커밋 메시지 작성 규칙"
 date: 2024-01-20
 tags: [Git, Convention, Best-Practice]

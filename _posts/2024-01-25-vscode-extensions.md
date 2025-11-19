@@ -1,4 +1,4 @@
-﻿---
+---
 title: "VS Code 생산성을 높이는 확장 프로그램 10선"
 date: 2024-01-25
 tags: [VSCode, Tools, Productivity]

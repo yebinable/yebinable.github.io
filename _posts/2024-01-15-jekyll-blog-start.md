@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Jekyll 블로그 시작하기"
 date: 2024-01-15
 tags: [Jekyll, Blog, Tutorial]
