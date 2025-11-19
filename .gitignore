@@ -14,7 +14,5 @@ vendor/
 # Windows
 Thumbs.db
 
-# Obsidian 제외
-*.md
-!README.md
-!POSTING_GUIDE.md
+# Obsidian 노트 제외 (블로그 포스트는 포함)
+Git Submodule로 하나의 Obsidian Vault에서 여러 개의 git repository 관리하기.md

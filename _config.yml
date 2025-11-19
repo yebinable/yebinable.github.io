@@ -52,4 +52,4 @@ exclude:
   - vendor
   - .git
   - .gitignore
-  - "*.md"
+  - "Git Submodule로 하나의 Obsidian Vault에서 여러 개의 git repository 관리하기.md"
