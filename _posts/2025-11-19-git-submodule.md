@@ -4,12 +4,14 @@ date: 2025-11-19
 tags: [git, obsidian]
 description: Git Submodule을 어떻게 사용하고 왜 사용하게 되었는지를 기록했습니다.
 ---
+
 ## 문제 상황 
 GitHub로 기술 블로그(Wiki)를 만들고 싶고, Obsidian으로 편하게 관리하고 싶었다. 하지만 다음과 같은 요구사항이 있었다:
 - **비공개 노트**: 업무 내용, 개인 메모, 작성 중인 초안은 Private으로 관리
 - **공개 블로그**: 완성된 기술 문서는 GitHub Pages(`username.github.io`)로 공개
 - **단일 Vault**: Obsidian에서 하나의 Vault로 모든 노트를 한 화면에서 관리
 - **자동 Git 푸시**: 파일 저장하면 자동으로 각 저장소에 커밋/푸시
+
 ### 시도한 방법들과 문제점
 
 **방법 1: 심볼릭 링크**
@@ -26,15 +28,20 @@ GitHub로 기술 블로그(Wiki)를 만들고 싶고, Obsidian으로 편하게 �
 - 하나의 Public 저장소에서 특정 폴더만 `.gitignore`로 제외
 - 문제: 실수로 비공개 내용이 Public에 올라갈 위험
 - 문제: Private 내용이 Git 히스토리에 남을 수 있음
+
 ## 원인 분석
 Obsidian은 **파일 시스템 기반**이고, Git은 **저장소 단위**로 동작한다.
+
 ### 필요한 조건
 1. Private와 Public이 **완전히 분리된 Git 저장소**여야 함
 2. Obsidian에서는 **하나의 Vault**로 보여야 함  
 3. Obsidian Git이 **각 저장소를 독립적으로 자동 커밋/푸시**해야 함
+
 ## 해결 방법 
+
 ### Git Submodule
 Git Submodule은 하나의 Git 저장소 안에 다른 Git 저장소를 포함시키는 기능이다.
+
 ### 최종 구조
 
 ```
@@ -53,6 +60,7 @@ notes/ (Private Repository)
 ```
 
 ### 설정 과정
+
 #### 1. GitHub 저장소 생성
 	
 	**Private 저장소:**
@@ -81,6 +89,7 @@ git add .gitmodules yebinable.github.io
 git commit -m "Add public wiki as submodule"
 git push
 ```
+
 #### 4. Obsidian 설정
 
 1. **Vault 열기**: `yebinable-private` 폴더를 Vault로 열기
@@ -97,12 +106,14 @@ git push
 ### 작동 원리
 
 Obsidian Git의 "Update submodules" 옵션이 이 두 단계를 자동으로 처리한다.
+
 #### Private 노트 작성 시
 ```
 private/work/보안-취약점.md 작성 및 저장
 → 10분 후 Obsidian Git 자동 실행
 → yebinable-private 저장소에 커밋 & 푸시 ✅
 ```
+
 #### Public 노트 작성 시
 ```
 yebinable.github.io/tech/Git-정리.md 작성 및 저장
