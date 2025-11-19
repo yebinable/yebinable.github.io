@@ -1,9 +1,7 @@
 ---
 title: Git Submodule로 하나의 Obsidian Vault에서 여러 개의 git repository 관리하기
 date: 2025-11-19
-tags:
-  - git
-  - obsidian
+tags: [git, obsidian]
 description: Git Submodule을 어떻게 사용하고 왜 사용하게 되었는지를 기록했습니다.
 ---
 ## 문제 상황 
