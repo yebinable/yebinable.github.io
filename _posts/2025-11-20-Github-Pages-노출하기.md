@@ -29,7 +29,9 @@ image: ./2025-11-20-Github-Pages-노출하기/attachment-1763634567483.png
  - SEO
  - RSS feed
 ![|347x337](./2025-11-20-Github-Pages-노출하기/attachment-1763634445219.png)
+
 # 1. **Google Search Console에 사이트 등록 및 소유권 확인**
+
 ![|500x409](./2025-11-20-Github-Pages-노출하기/attachment-1763634462444.png)
 
 ## `github.io` 를 등록할 때는 `URL 접두어` 방식을 선택
@@ -43,10 +45,12 @@ image: ./2025-11-20-Github-Pages-노출하기/attachment-1763634567483.png
 
 - 이후 [완료] 버튼을 누르면 아래와 같이 `소유권이 확인됨`
 ![|500x453](./2025-11-20-Github-Pages-노출하기/attachment-1763634497816.png)
+
 # 2.  **sitemap.xml 파일 생성 및 업로드** 및 **Google Search Console에 sitemap 제출**
 
 - 앞서 말했다시피, Sitemap은 Jekyll을 사용하여 손쉽게 생성되었기에 사이트맵 주소만 Google Search Console에 추가하면 된다.
 ![|640x415](./2025-11-20-Github-Pages-노출하기/attachment-1763634521381.png)
+
 # 3. robots.txt 파일 생성 및 업로드
 
 - robots.txt 파일 생성은 간단하다 아래와 같은 내용으로 파일을 만든 후 root(최상단)에 파일을 추가해주면 된다.
