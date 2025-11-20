@@ -470,13 +470,13 @@ img {
    Floating TOC
    =================================== */
 .toc-sidebar {
-  display: block !important;
+  display: block;
   flex-shrink: 0;
   width: 300px;
   align-self: flex-start;
-  position: -webkit-sticky !important;
-  position: sticky !important;
-  top: 100px !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
   z-index: 10;
   height: fit-content;
 }

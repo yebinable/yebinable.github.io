@@ -144,12 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
       
       window.addEventListener('scroll', function() {
         let current = '';
+        let closestDistance = Infinity;
         
         headings.forEach(function(heading) {
           const sectionTop = heading.offsetTop;
-          const sectionHeight = heading.clientHeight;
+          const distance = Math.abs(window.scrollY + 150 - sectionTop);
           
-          if (window.scrollY >= (sectionTop - 100)) {
+          if (window.scrollY + 150 >= sectionTop && distance < closestDistance) {
+            closestDistance = distance;
             current = heading.id;
           }
         });
