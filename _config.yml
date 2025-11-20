@@ -37,6 +37,10 @@ defaults:
     values:
       layout: "post"
       
+# Include post asset folders
+include:
+  - _posts
+
 # Exclude
 exclude:
   - Gemfile

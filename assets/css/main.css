@@ -466,8 +466,61 @@ img {
 }
 
 .post-content img {
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
   margin: 40px 0;
+  display: block;
+}
+
+/* 이미지 크기 클래스 */
+.post-content .img-full {
+  width: 100%;
+}
+
+.post-content .img-large {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .img-medium {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .img-small {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .img-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.post-content .img-border {
+  border: 1px solid var(--border-light);
+  padding: 8px;
+  background: var(--bg-white);
+}
+
+/* 이미지 캡션 */
+.post-content img + em {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-top: -30px;
+  margin-bottom: 40px;
+  font-style: normal;
 }
 
 .post-content hr {
