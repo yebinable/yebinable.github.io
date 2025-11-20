@@ -142,27 +142,32 @@ document.addEventListener('DOMContentLoaded', function() {
       // 스크롤시 현재 섹션 하이라이트
       const tocLinks = tocContainer.querySelectorAll('.toc-link');
       
-      window.addEventListener('scroll', function() {
-        let current = '';
-        let closestDistance = Infinity;
+      function updateTocHighlight() {
+        const scrollPosition = window.scrollY + 150;
+        let current = headings[0].id; // 기본값: 첫 번째 헤딩
         
+        // 현재 스크롤 위치를 지나친 헤딩들 중 가장 가까운 것 찾기
         headings.forEach(function(heading) {
           const sectionTop = heading.offsetTop;
-          const distance = Math.abs(window.scrollY + 150 - sectionTop);
-          
-          if (window.scrollY + 150 >= sectionTop && distance < closestDistance) {
-            closestDistance = distance;
+          if (scrollPosition >= sectionTop) {
             current = heading.id;
           }
         });
         
+        // 하이라이트 업데이트
         tocLinks.forEach(function(link) {
           link.classList.remove('active');
           if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
           }
         });
-      });
+      }
+      
+      // 초기 하이라이트 설정
+      updateTocHighlight();
+      
+      // 스크롤시 업데이트
+      window.addEventListener('scroll', updateTocHighlight);
     } else {
       // 헤딩이 없으면 TOC 숨기기
       const tocWrapper = document.querySelector('.toc-wrapper');
