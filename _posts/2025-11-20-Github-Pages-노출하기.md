@@ -73,7 +73,7 @@ Sitemap: https://yebinable.github.io/sitemap.xml
 
 ## **레이아웃 파일에 태그 추가**
 
-- `_layouts/default.html`의 `<head>` 섹션에 `{% seo %}` 태그를 삽입
+- `_layouts/default.html` 의 `<head>` 섹션에 `seo` 태그를 삽입
 
 ```html
 <head>
@@ -82,6 +82,7 @@ Sitemap: https://yebinable.github.io/sitemap.xml
   {% seo %}
 </head>
 ```
+
 
 ## `_config.yml` 에 사이트 전체 SEO 설정
 
