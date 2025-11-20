@@ -470,9 +470,10 @@ img {
   flex-shrink: 0;
   width: 300px;
   align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 100px !important;
+  z-index: 10;
 }
 
 .toc-wrapper {
