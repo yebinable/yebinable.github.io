@@ -935,7 +935,7 @@ img {
   
   /* TOC를 모바일에서 숨김 */
   .post-layout {
-    grid-template-columns: 1fr;
+    display: block;
   }
   
   .toc-sidebar {
@@ -967,6 +967,16 @@ img {
   
   .post-content {
     font-size: 17px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  
+  .post-header-wrapper,
+  .post-body-wrapper,
+  .post-footer-wrapper {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .post-content h2 {
