@@ -878,6 +878,10 @@ img {
    Responsive
    =================================== */
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
   .nav-menu {
     display: none;
     position: fixed;
@@ -974,7 +978,7 @@ img {
   }
   
   .post-content {
-    font-size: 17px;
+    font-size: 15px;
     min-width: 0;
     max-width: 100%;
   }
@@ -987,8 +991,24 @@ img {
     padding-right: 20px;
   }
   
+  .post-content h1 {
+    font-size: 24px;
+    margin: 32px 0 16px;
+  }
+  
   .post-content h2 {
-    font-size: 26px;
+    font-size: 22px;
+    margin: 28px 0 14px;
+  }
+  
+  .post-content h3 {
+    font-size: 18px;
+    margin: 24px 0 12px;
+  }
+  
+  .post-content h4 {
+    font-size: 16px;
+    margin: 20px 0 10px;
   }
   
   .footer-content {
@@ -1002,15 +1022,43 @@ img {
 }
 
 @media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
   .hero-title {
-    font-size: 28px;
+    font-size: 26px;
   }
   
   .post-item-title {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .post-title {
-    font-size: 28px;
+    font-size: 26px;
+  }
+  
+  .post-content {
+    font-size: 14px;
+  }
+  
+  .post-content h1 {
+    font-size: 22px;
+    margin: 28px 0 14px;
+  }
+  
+  .post-content h2 {
+    font-size: 20px;
+    margin: 24px 0 12px;
+  }
+  
+  .post-content h3 {
+    font-size: 17px;
+    margin: 20px 0 10px;
+  }
+  
+  .post-content h4 {
+    font-size: 15px;
+    margin: 16px 0 8px;
   }
 }
