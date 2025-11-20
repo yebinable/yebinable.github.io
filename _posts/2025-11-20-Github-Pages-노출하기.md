@@ -28,9 +28,7 @@ image: /Attachments/2025-11-20-Github-Pages-노출하기/2025-11-20-Github-Pages
  - sitemap
  - SEO
  - RSS feed
-
-![|500x486](yebinable.github.io/Attachments/2025-11-20-Github-Pages-노출하기/Google%20검색에%20내%20Github%20Pages%20노출하기-1763629649956.png)
-
+![|347x337](attachment-1763634445219.png)
 # 1. **Google Search Console에 사이트 등록 및 소유권 확인**
 
 ![|500x409](yebinable.github.io/Attachments/2025-11-20-Github-Pages-노출하기/Google%20검색에%20내%20Github%20Pages%20노출하기-1763627951078.png)
