@@ -141,8 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // 스크롤시 현재 섹션 하이라이트
       const tocLinks = tocContainer.querySelectorAll('.toc-link');
+      let isUserClicking = false;
       
       function updateTocHighlight() {
+        // 사용자가 클릭 중이면 업데이트 건너뛰기
+        if (isUserClicking) return;
+        
         let current = headings[0].id;
         
         // 화면 상단(헤더 고려하여 100px)을 기준으로
@@ -152,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const rect = heading.getBoundingClientRect();
           
           // 헤딩이 화면 상단(100px 아래)보다 위에 있거나 약간 아래에 있으면
-          if (rect.top <= 100) {
+          if (rect.top <= 150) {
             current = heading.id;
             break;
           }
@@ -166,6 +170,24 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       }
+      
+      // TOC 링크 클릭 이벤트
+      tocLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          // 모든 링크에서 active 제거
+          tocLinks.forEach(function(l) {
+            l.classList.remove('active');
+          });
+          // 클릭한 링크에 active 추가
+          this.classList.add('active');
+          
+          // 클릭 후 1초간 스크롤 업데이트 중지
+          isUserClicking = true;
+          setTimeout(function() {
+            isUserClicking = false;
+          }, 1000);
+        });
+      });
       
       // 초기 하이라이트 설정
       updateTocHighlight();
