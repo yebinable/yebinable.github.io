@@ -4,7 +4,7 @@ title: Google 검색에 내 Github Pages 노출하기
 date: 2025-11-20
 tags: [github-pages, google]
 description: 구글 검색에 내 GitHub Pages를 노출하고 싶어서 `Perplexity` 검색 도움을 받아 다음과 같이 설정해보고 정리해보았습니다.
-image: /2025-11-20-Github-Pages-노출하기/2025-11-20-Github-Pages-노출하기-1763633181615.png
+image: ./2025-11-20-Github-Pages-노출하기/2025-11-20-Github-Pages-노출하기-1763633181615.png
 ---
 
 구글 검색에 내 GitHub Pages를 노출하고 싶어서 `Perplexity` 검색 도움을 받아 다음과 같이 설정하고 정리해보았다.
@@ -73,7 +73,7 @@ Sitemap: https://yebinable.github.io/sitemap.xml
 
 ## **레이아웃 파일에 태그 추가**
 
-- `_layouts/default.html`의 `<head>` 섹션에 `{% seo %}` 태그를 삽입
+- `_layouts/default.html` 의 `<head>` 섹션에 `seo` 태그를 삽입
 
 ```html
 <head>
@@ -82,6 +82,7 @@ Sitemap: https://yebinable.github.io/sitemap.xml
   {% seo %}
 </head>
 ```
+
 
 ## `_config.yml` 에 사이트 전체 SEO 설정
 
