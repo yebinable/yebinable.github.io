@@ -958,7 +958,7 @@ img {
   }
   
   .toc-sidebar {
-    display: none;
+    display: none !important;
   }
   
   .post-item {
