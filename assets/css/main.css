@@ -7,7 +7,8 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   width: 100%;
 }
 
@@ -30,7 +31,8 @@ body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   width: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -461,6 +463,7 @@ img {
   gap: 60px;
   align-items: flex-start;
   position: relative;
+  overflow: visible;
 }
 
 /* ===================================
