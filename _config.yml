@@ -39,11 +39,7 @@ defaults:
     values:
       layout: "post"
       
-# Include post asset folders
-include:
-  - _posts
-
-# Exclude
+# Exclude from processing and sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -51,3 +47,15 @@ exclude:
   - vendor
   - .git
   - .gitignore
+  - README.md
+  - IMAGE_GUIDE.md
+  - IMAGE_PATH_AUTO_FIX.md
+  - SEO_GUIDE.md
+
+# Keep images and assets but not markdown files
+keep_files:
+  - _posts/**/*.png
+  - _posts/**/*.jpg
+  - _posts/**/*.jpeg
+  - _posts/**/*.gif
+  - _posts/**/*.svg
