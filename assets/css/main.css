@@ -974,7 +974,19 @@ img {
   }
   
   .post-title {
-    font-size: 32px;
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  
+  .post-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .post-header .post-meta {
+    font-size: 13px;
+    gap: 12px;
+    margin-bottom: 16px;
   }
   
   .post-content {
@@ -1035,7 +1047,19 @@ img {
   }
   
   .post-title {
-    font-size: 26px;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  
+  .post-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .post-header .post-meta {
+    font-size: 12px;
+    gap: 10px;
+    margin-bottom: 14px;
   }
   
   .post-content {
