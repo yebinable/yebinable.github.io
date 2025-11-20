@@ -74,15 +74,7 @@ Sitemap: https://yebinable.github.io/sitemap.xml
 ## **레이아웃 파일에 태그 추가**
 
 - `_layouts/default.html` 의 `<head>` 섹션에 `seo` 태그를 삽입
-
-```html
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% seo %}
-</head>
-```
-
+![|640x105](./2025-11-20-Github-Pages-노출하기/attachment-1763636866545.png)
 
 ## `_config.yml` 에 사이트 전체 SEO 설정
 
