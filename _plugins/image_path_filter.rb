@@ -21,6 +21,23 @@
       content
     end
   end
+  
+  # Post 클래스에 Hook 추가하여 front matter image도 변환
+  class PostImagePathFixer
+    Jekyll::Hooks.register :posts, :pre_render do |post|
+      if post.data['image'] && post.data['image'].start_with?('./')
+        folder_name = "#{post.date.strftime('%Y-%m-%d')}-#{post.data['slug']}"
+        
+        # ./폴더명/이미지 패턴
+        if post.data['image'] =~ /\.\/#{Regexp.escape(folder_name)}\//
+          post.data['image'] = post.data['image'].gsub(/\.\/#{Regexp.escape(folder_name)}\//, "/_posts/#{folder_name}/")
+        # ./attachment-xxx.png 패턴
+        elsif post.data['image'] =~ /\.\/(attachment-[^\s]+)/
+          post.data['image'] = "/_posts/#{folder_name}/#{$1}"
+        end
+      end
+    end
+  end
 end
 
 Liquid::Template.register_filter(Jekyll::ImagePathFilter)
