@@ -954,11 +954,14 @@ img {
   
   /* TOC를 모바일에서 숨김 */
   .post-layout {
-    display: block;
+    display: block !important;
   }
   
   .toc-sidebar {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
   
   .post-item {
