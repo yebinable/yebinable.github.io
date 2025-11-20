@@ -4,7 +4,7 @@ title: Google 검색에 내 Github Pages 노출하기
 date: 2025-11-20
 tags: [github-pages, google]
 description: 구글 검색에 내 GitHub Pages를 노출하고 싶어서 `Perplexity` 검색 도움을 받아 다음과 같이 설정해보고 정리해보았습니다.
-image: 2025-11-20-Github-Pages-노출하기/2025-11-20-Github-Pages-노출하기-1763633181615.png
+image: /Attachments/2025-11-20-Github-Pages-노출하기/2025-11-20-Github-Pages-노출하기-1763633181615.png
 ---
 
 구글 검색에 내 GitHub Pages를 노출하고 싶어서 `Perplexity` 검색 도움을 받아 다음과 같이 설정하고 정리해보았다.
