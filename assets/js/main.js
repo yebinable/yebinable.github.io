@@ -144,15 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
       let isUserClicking = false;
       
       function updateTocHighlight() {
-<<<<<<< HEAD
-        const scrollPosition = window.scrollY + 150;
-        let current = headings[0].id; // 기본값: 첫 번째 헤딩
-        
-        // 현재 스크롤 위치를 지나친 헤딩들 중 가장 가까운 것 찾기
-        headings.forEach(function(heading) {
-          const sectionTop = heading.offsetTop;
-          if (scrollPosition >= sectionTop) {
-=======
         // 사용자가 클릭 중이면 업데이트 건너뛰기
         if (isUserClicking) return;
         
@@ -166,10 +157,10 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // 헤딩이 화면 상단(100px 아래)보다 위에 있거나 약간 아래에 있으면
           if (rect.top <= 150) {
->>>>>>> 22b1404e2710ff978ad74cce118cac9bccd59df6
             current = heading.id;
+            break;
           }
-        });
+        }
         
         // 하이라이트 업데이트
         tocLinks.forEach(function(link) {

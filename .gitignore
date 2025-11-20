@@ -7,6 +7,7 @@ _site/
 # Bundler
 .bundle/
 vendor/
+Gemfile.lock
 
 # macOS
 .DS_Store
