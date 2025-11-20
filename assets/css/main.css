@@ -420,10 +420,9 @@ img {
    Post Layout with TOC
    =================================== */
 .post-layout {
-  display: grid;
-  grid-template-columns: minmax(700px, 1fr) 300px;
+  display: flex;
   gap: 60px;
-  align-items: start;
+  align-items: flex-start;
   position: relative;
 }
 
@@ -431,9 +430,8 @@ img {
    Floating TOC
    =================================== */
 .toc-sidebar {
-  position: relative;
-  min-width: 300px;
-  z-index: 10;
+  flex-shrink: 0;
+  width: 300px;
 }
 
 .toc-wrapper {
@@ -508,7 +506,9 @@ img {
   font-size: 18px;
   line-height: 1.8;
   color: var(--text-dark);
-  min-width: 0;
+  flex: 1;
+  min-width: 700px;
+  max-width: 1040px;
 }
 
 .post-content h2 {
