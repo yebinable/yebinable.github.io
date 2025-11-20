@@ -143,16 +143,29 @@ document.addEventListener('DOMContentLoaded', function() {
       const tocLinks = tocContainer.querySelectorAll('.toc-link');
       
       function updateTocHighlight() {
-        const scrollPosition = window.scrollY + 150;
         let current = headings[0].id; // 기본값: 첫 번째 헤딩
+        let foundVisible = false;
         
-        // 현재 스크롤 위치를 지나친 헤딩들 중 가장 가까운 것 찾기
+        // 화면에 보이는 첫 번째 헤딩 찾기
         headings.forEach(function(heading) {
-          const sectionTop = heading.offsetTop;
-          if (scrollPosition >= sectionTop) {
+          const rect = heading.getBoundingClientRect();
+          // 헤딩이 화면 상단에서 200px 아래에 있고, 화면 안에 있으면
+          if (!foundVisible && rect.top >= 0 && rect.top <= window.innerHeight) {
             current = heading.id;
+            foundVisible = true;
           }
         });
+        
+        // 만약 화면에 보이는 헤딩이 없으면 (모두 위로 지나갔으면)
+        // 가장 최근에 지나간 헤딩 사용
+        if (!foundVisible) {
+          headings.forEach(function(heading) {
+            const rect = heading.getBoundingClientRect();
+            if (rect.top < 0) {
+              current = heading.id;
+            }
+          });
+        }
         
         // 하이라이트 업데이트
         tocLinks.forEach(function(link) {
