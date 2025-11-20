@@ -424,6 +424,7 @@ img {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
+  min-height: 100vh;
 }
 
 .post-footer-wrapper {
@@ -468,12 +469,13 @@ img {
 .toc-sidebar {
   flex-shrink: 0;
   width: 300px;
-}
-
-.toc-wrapper {
+  align-self: flex-start;
   position: -webkit-sticky;
   position: sticky;
   top: 100px;
+}
+
+.toc-wrapper {
   padding: 28px;
   background: var(--bg-white);
   border-radius: 16px;
@@ -481,7 +483,6 @@ img {
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  will-change: transform;
 }
 
 .toc-title {
