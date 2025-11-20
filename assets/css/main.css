@@ -376,12 +376,87 @@ img {
 }
 
 /* ===================================
+   Post Layout with TOC
+   =================================== */
+.post-layout {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ===================================
+   Floating TOC
+   =================================== */
+.toc-sidebar {
+  position: relative;
+}
+
+.toc-wrapper {
+  position: sticky;
+  top: 100px;
+  padding: 24px;
+  background: var(--bg-light);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+.toc-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-h3 {
+  margin-left: 16px;
+}
+
+.toc-link {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-gray);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: var(--transition);
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -12px;
+}
+
+.toc-link:hover {
+  color: var(--primary-color);
+}
+
+.toc-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+  border-left-color: var(--primary-color);
+}
+
+/* ===================================
    Post Content
    =================================== */
 .post-content {
   font-size: 18px;
   line-height: 1.8;
   color: var(--text-dark);
+  min-width: 0;
 }
 
 .post-content h2 {
@@ -730,6 +805,15 @@ img {
   
   .section-title {
     font-size: 24px;
+  }
+  
+  /* TOC를 모바일에서 숨김 */
+  .post-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .toc-sidebar {
+    display: none;
   }
   
   .post-item-header {

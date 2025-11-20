@@ -106,4 +106,67 @@ document.addEventListener('DOMContentLoaded', function() {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
   });
+
+  // Floating TOC (Table of Contents)
+  const postContent = document.querySelector('.post-content');
+  const tocContainer = document.getElementById('toc');
+  
+  if (postContent && tocContainer) {
+    // H2, H3 헤딩 수집
+    const headings = postContent.querySelectorAll('h2, h3');
+    
+    if (headings.length > 0) {
+      const tocList = document.createElement('ul');
+      tocList.className = 'toc-list';
+      
+      headings.forEach(function(heading, index) {
+        // 헤딩에 ID 추가
+        if (!heading.id) {
+          heading.id = 'heading-' + index;
+        }
+        
+        const li = document.createElement('li');
+        li.className = 'toc-item toc-' + heading.tagName.toLowerCase();
+        
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = heading.textContent;
+        a.className = 'toc-link';
+        
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+      
+      tocContainer.appendChild(tocList);
+      
+      // 스크롤시 현재 섹션 하이라이트
+      const tocLinks = tocContainer.querySelectorAll('.toc-link');
+      
+      window.addEventListener('scroll', function() {
+        let current = '';
+        
+        headings.forEach(function(heading) {
+          const sectionTop = heading.offsetTop;
+          const sectionHeight = heading.clientHeight;
+          
+          if (window.scrollY >= (sectionTop - 100)) {
+            current = heading.id;
+          }
+        });
+        
+        tocLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    } else {
+      // 헤딩이 없으면 TOC 숨기기
+      const tocWrapper = document.querySelector('.toc-wrapper');
+      if (tocWrapper) {
+        tocWrapper.style.display = 'none';
+      }
+    }
+  }
 });
