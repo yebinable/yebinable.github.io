@@ -31,14 +31,12 @@ plugins:
 paginate: 9
 paginate_path: "/page/:num/"
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+
       
+# Include post asset folders (for images)
+include:
+  - _posts
+
 # Exclude from processing and sitemap
 exclude:
   - Gemfile
@@ -52,10 +50,14 @@ exclude:
   - IMAGE_PATH_AUTO_FIX.md
   - SEO_GUIDE.md
 
-# Keep images and assets but not markdown files
-keep_files:
-  - _posts/**/*.png
-  - _posts/**/*.jpg
-  - _posts/**/*.jpeg
-  - _posts/**/*.gif
-  - _posts/**/*.svg
+# Sitemap defaults - exclude image folders from sitemap
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "_posts/**/*"
+    values:
+      sitemap: false
