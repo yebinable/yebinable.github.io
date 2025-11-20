@@ -371,7 +371,6 @@ img {
   font-size: 20px;
   line-height: 1.6;
   color: var(--text-gray);
-  max-width: 700px;
   margin: 0 auto;
 }
 

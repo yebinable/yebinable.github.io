@@ -39,10 +39,9 @@ defaults:
     values:
       layout: "post"
       
-# Include post asset folders and attachments
+# Include post asset folders
 include:
   - _posts
-  - Attachments
 
 # Exclude
 exclude:
