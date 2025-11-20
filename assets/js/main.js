@@ -3,29 +3,48 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      navMenu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
+  if (!menuToggle || !navMenu) return;
+  
+  let isMenuOpen = false;
+  
+  // 햄버거 버튼 클릭
+  menuToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
     
-    // 메뉴 링크 클릭시 메뉴 닫기
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-      });
-    });
+    isMenuOpen = !isMenuOpen;
     
-    // 메뉴 외부 클릭시 메뉴 닫기
-    document.addEventListener('click', function(e) {
-      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-      }
+    if (isMenuOpen) {
+      navMenu.classList.add('active');
+      menuToggle.classList.add('active');
+    } else {
+      navMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+  
+  // 메뉴 링크 클릭시 메뉴 닫기
+  const menuLinks = navMenu.querySelectorAll('a');
+  menuLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      isMenuOpen = false;
+      navMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
     });
-  }
+  });
+  
+  // 메뉴 외부 클릭시 메뉴 닫기
+  document.addEventListener('click', function(e) {
+    const target = e.target;
+    const isClickInsideMenu = navMenu.contains(target);
+    const isClickOnToggle = menuToggle.contains(target);
+    
+    if (!isClickInsideMenu && !isClickOnToggle && isMenuOpen) {
+      isMenuOpen = false;
+      navMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
 
   // Smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
