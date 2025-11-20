@@ -19,6 +19,8 @@ social:
 markdown: kramdown
 permalink: /:title/
 highlighter: rouge
+lang: ko_KR
+timezone: Asia/Seoul
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
