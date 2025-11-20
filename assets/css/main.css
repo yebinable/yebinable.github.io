@@ -109,19 +109,26 @@ img {
 .menu-toggle {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
 
 .menu-toggle span {
+  display: block;
   width: 24px;
   height: 2px;
   background: var(--text-dark);
   border-radius: 2px;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 /* ===================================
@@ -644,15 +651,16 @@ img {
   }
   
   .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: translateY(8px) rotate(45deg);
   }
   
   .menu-toggle.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-20px);
   }
   
   .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: translateY(-8px) rotate(-45deg);
   }
   
   .hero {
