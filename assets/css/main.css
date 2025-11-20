@@ -952,7 +952,7 @@ img {
     font-size: 24px;
   }
   
-  /* TOC를 모바일에서 숨김 */
+  /* TOC를 모바일에서 완전히 숨김 */
   .post-layout {
     display: block !important;
   }
@@ -962,6 +962,11 @@ img {
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
   }
   
   .post-item {
