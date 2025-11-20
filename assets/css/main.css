@@ -34,9 +34,9 @@ body {
 }
 
 .container-narrow {
-  max-width: 1400px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 a {
@@ -376,14 +376,34 @@ img {
 }
 
 /* ===================================
+   Post Featured Image
+   =================================== */
+.post-featured-image {
+  margin: 48px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.post-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+/* ===================================
    Post Layout with TOC
    =================================== */
 .post-layout {
   display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 80px;
+  grid-template-columns: minmax(0, 900px) 280px;
+  gap: 60px;
   align-items: start;
   position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* ===================================
