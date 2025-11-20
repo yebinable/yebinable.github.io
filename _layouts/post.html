@@ -35,7 +35,7 @@ layout: default
   <div class="post-body-wrapper">
     <div class="post-layout">
       <div class="post-content">
-        {{ content }}
+        {{ content | fix_image_paths }}
       </div>
 
       <aside class="toc-sidebar">
