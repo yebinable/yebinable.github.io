@@ -375,6 +375,21 @@ img {
   margin: 0 auto;
 }
 
+.post-header-wrapper {
+  background: var(--bg-white);
+  padding-bottom: 48px;
+}
+
+.post-body-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.post-footer-wrapper {
+  padding-top: 48px;
+}
+
 /* ===================================
    Post Featured Image
    =================================== */
@@ -398,12 +413,10 @@ img {
    =================================== */
 .post-layout {
   display: grid;
-  grid-template-columns: minmax(0, 900px) 280px;
+  grid-template-columns: minmax(700px, 1fr) 300px;
   gap: 60px;
   align-items: start;
   position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 /* ===================================
@@ -416,14 +429,14 @@ img {
 
 .toc-wrapper {
   position: sticky;
-  top: 100px;
+  top: 120px;
   padding: 28px;
-  background: var(--bg-light);
+  background: var(--bg-white);
   border-radius: 16px;
   border: 1px solid var(--border-color);
-  max-height: calc(100vh - 150px);
+  max-height: calc(100vh - 180px);
   overflow-y: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .toc-title {

@@ -3,8 +3,8 @@ layout: default
 ---
 
 <article class="post">
-  <div class="container-narrow">
-    <header class="post-header">
+  <header class="post-header-wrapper">
+    <div class="container-narrow">
       <div class="post-meta">
         <time datetime="{{ page.date | date_to_xmlschema }}">
           {{ page.date | date: "%Y년 %m월 %d일" }}
@@ -23,31 +23,41 @@ layout: default
       {% if page.description %}
       <p class="post-subtitle">{{ page.description }}</p>
       {% endif %}
-    </header>
 
+      {% if page.image %}
+      <div class="post-featured-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-body-wrapper">
     <div class="post-layout">
+      <div class="post-content">
+        {{ content }}
+      </div>
+
       <aside class="toc-sidebar">
         <div class="toc-wrapper">
           <h3 class="toc-title">목차</h3>
           <nav class="toc" id="toc"></nav>
         </div>
       </aside>
-
-      <div class="post-content">
-        {{ content }}
-      </div>
     </div>
+  </div>
 
-    {% if page.tags %}
-    <footer class="post-footer">
+  {% if page.tags %}
+  <footer class="post-footer-wrapper">
+    <div class="container-narrow">
       <div class="post-tags-list">
         {% for tag in page.tags %}
         <a href="{{ site.baseurl }}/tags#{{ tag }}" class="tag-large">{{ tag }}</a>
         {% endfor %}
       </div>
-    </footer>
-    {% endif %}
-  </div>
+    </div>
+  </footer>
+  {% endif %}
 </article>
 
 {% if site.related_posts.size > 0 %}
