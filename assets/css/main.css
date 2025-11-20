@@ -468,9 +468,25 @@ img {
   margin-bottom: 10px;
 }
 
+.toc-h1 {
+  margin-left: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.toc-h2 {
+  margin-left: 12px;
+  font-size: 14px;
+}
+
 .toc-h3 {
-  margin-left: 20px;
+  margin-left: 24px;
   font-size: 13px;
+}
+
+.toc-h4 {
+  margin-left: 36px;
+  font-size: 12px;
 }
 
 .toc-link {
@@ -510,6 +526,15 @@ img {
   max-width: 1040px;
 }
 
+.post-content h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 56px 0 28px;
+  scroll-margin-top: 120px;
+}
+
 .post-content h2 {
   font-size: 32px;
   font-weight: 700;
@@ -532,6 +557,20 @@ img {
   font-size: 20px;
   font-weight: 600;
   margin: 32px 0 16px;
+  scroll-margin-top: 120px;
+}
+
+.post-content h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 28px 0 14px;
+  scroll-margin-top: 120px;
+}
+
+.post-content h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 12px;
   scroll-margin-top: 120px;
 }
 

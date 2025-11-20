@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const tocContainer = document.getElementById('toc');
   
   if (postContent && tocContainer) {
-    // H2, H3 헤딩 수집
-    const headings = postContent.querySelectorAll('h2, h3');
+    // H1, H2, H3, H4 헤딩 수집
+    const headings = postContent.querySelectorAll('h1, h2, h3, h4');
     
     if (headings.length > 0) {
       const tocList = document.createElement('ul');
