@@ -3,10 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
   
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function() {
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
       navMenu.classList.toggle('active');
       menuToggle.classList.toggle('active');
+    });
+    
+    // 메뉴 링크 클릭시 메뉴 닫기
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+    
+    // 메뉴 외부 클릭시 메뉴 닫기
+    document.addEventListener('click', function(e) {
+      if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
     });
   }
 

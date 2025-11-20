@@ -611,10 +611,48 @@ img {
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-white);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
   }
   
   .menu-toggle {
     display: flex;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
   
   .hero {
