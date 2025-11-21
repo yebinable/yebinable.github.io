@@ -270,7 +270,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (searchToggle && searchModal) {
     // Fetch search data
     fetch('/search.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to fetch search data');
+        return response.json();
+      })
       .then(data => {
         searchData = data;
       })
