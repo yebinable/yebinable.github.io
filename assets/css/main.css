@@ -1,5 +1,4 @@
-﻿
-/* Reset & Variables */
+﻿/* Reset & Variables */
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +20,31 @@ html {
   --bg-light: #F8FAFB;
   --border-light: #E8ECF0;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --text-dark: #F7FAFC;
+  --text-gray: #CBD5E0;
+  --text-light: #A0AEC0;
+  --bg-white: #1A202C;
+  --bg-light: #2D3748;
+  --border-light: #4A5568;
+}
+
+/* Header background fix for dark mode */
+body.dark-mode .header {
+  background: rgba(26, 32, 44, 0.9);
+}
+
+/* Code block fix for dark mode */
+body.dark-mode .post-content pre {
+  background: #2D3748;
+}
+
+body.dark-mode .post-content code {
+  background: #2D3748;
+  color: #63B3ED;
 }
 
 body {
@@ -114,6 +138,26 @@ img {
   width: 100%;
   height: 2px;
   background: var(--primary-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px;
+  margin-left: 20px;
+  color: var(--text-dark);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-light);
+  transform: scale(1.1);
 }
 
 .menu-toggle {
