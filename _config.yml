@@ -38,10 +38,6 @@ include:
   - _posts
   - api
 
-# Keep files with extension
-keep_files:
-  - api
-
 # Exclude from processing and sitemap
 exclude:
   - Gemfile
