@@ -36,7 +36,7 @@ paginate_path: "/page/:num/"
 # Include post asset folders (for images)
 include:
   - _posts
-  - search.json
+  - api
 
 # Exclude from processing and sitemap
 exclude:
