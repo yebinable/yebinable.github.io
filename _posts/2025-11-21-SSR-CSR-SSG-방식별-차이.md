@@ -220,6 +220,7 @@ my-react-app/
 
 ![|640x467](./2025-11-21-SSR-CSR-SSG-방식별-차이/attachment-1763709897136.png)
 # 참고자료
+
 - [Google 검색의 작동 방식](https://www.google.com/intl/ko_ALL/search/howsearchworks/how-search-works/organizing-information/)
 - [Google 크롤링 및 색인 생성](https://developers.google.com/search/docs/crawling-indexing?hl=ko)
 - [Google 검색 Essentials]([https://developers.google.com/search/docs/essentials?hl=ko](https://developers.google.com/search/docs/essentials?hl=ko)
