@@ -148,17 +148,32 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isUserClicking) return;
         
         let current = headings[0].id;
+        const headerHeight = 100; // 헤더 높이 (sticky header)
         
-        // 화면 상단(헤더 고려하여 100px)을 기준으로
-        // 현재 화면에 보이는 헤딩 중 가장 위에 있는 것 찾기
-        for (let i = headings.length - 1; i >= 0; i--) {
+        // 헤더 아래에 실제로 보이는 첫 번째 헤딩 찾기
+        let foundVisible = false;
+        for (let i = 0; i < headings.length; i++) {
           const heading = headings[i];
           const rect = heading.getBoundingClientRect();
           
-          // 헤딩이 화면 상단(100px 아래)보다 위에 있거나 약간 아래에 있으면
-          if (rect.top <= 150) {
+          // 헤딩이 헤더 아래에 보이면 (헤더에 가려지지 않음)
+          if (rect.top >= headerHeight && !foundVisible) {
             current = heading.id;
+            foundVisible = true;
             break;
+          }
+        }
+        
+        // 모든 헤딩이 헤더 위로 지나갔으면, 가장 마지막에 지나간 것 선택
+        if (!foundVisible) {
+          for (let i = headings.length - 1; i >= 0; i--) {
+            const heading = headings[i];
+            const rect = heading.getBoundingClientRect();
+            
+            if (rect.top < headerHeight) {
+              current = heading.id;
+              break;
+            }
           }
         }
         
@@ -200,6 +215,46 @@ document.addEventListener('DOMContentLoaded', function() {
       if (tocWrapper) {
         tocWrapper.style.display = 'none';
       }
+    }
+  }
+
+  // --- Dark Mode Toggle ---
+  const themeToggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  if (themeToggleButton) {
+    // 다크 모드 활성화 함수
+    const enableDarkMode = () => {
+      body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+      themeToggleButton.textContent = '☀️'; // 아이콘 변경
+    };
+
+    // 다크 모드 비활성화 함수
+    const disableDarkMode = () => {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+      themeToggleButton.textContent = '🌙'; // 아이콘 변경
+    };
+
+    // 토글 버튼 클릭 이벤트
+    themeToggleButton.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        disableDarkMode();
+      } else {
+        enableDarkMode();
+      }
+    });
+
+    // 페이지 로드 시 사용자 설정 확인
+    const savedTheme = localStorage.getItem('theme');
+    // 사용자의 시스템 설정이 다크 모드인지 확인
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      enableDarkMode();
+    } else {
+      disableDarkMode(); // 기본은 라이트 모드
     }
   }
 });
