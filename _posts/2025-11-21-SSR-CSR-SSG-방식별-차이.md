@@ -7,6 +7,8 @@ description: 웹사이트를 만드는 재료(데이터, HTML, CSS, JS)를 누�
 image: ./2025-11-21-SSR-CSR-SSG-방식별-차이/attachment-1763709106408.png
 ---
 
+
+
 # 웹 렌더링 방식이란?
 
 - 웹사이트를 만드는 재료(데이터, HTML, CSS, JS)를 누가, 언제, 어떻게 조립해서 사용자에게 보여줄 것 인가에 대한 전체 과정과 전략을 말함
@@ -229,4 +231,4 @@ my-react-app/
 
 - [Google 검색의 작동 방식](https://www.google.com/intl/ko_ALL/search/howsearchworks/how-search-works/organizing-information/)
 - [Google 크롤링 및 색인 생성](https://developers.google.com/search/docs/crawling-indexing?hl=ko)
-- [Google 검색 Essentials]([https://developers.google.com/search/docs/essentials?hl=ko](https://developers.google.com/search/docs/essentials?hl=ko)
+- [Google 검색 Essentials](https://developers.google.com/search/docs/essentials?hl=ko](https://developers.google.com/search/docs/essentials?hl=ko)
