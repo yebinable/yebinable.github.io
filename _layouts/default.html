@@ -28,6 +28,7 @@
           <li><a href="{{ '/tags' | relative_url }}" {% if page.url == '/tags/' %}class="active"{% endif %}>Tags</a></li>
           <li><a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
         </ul>
+        <button id="search-toggle" class="search-toggle" aria-label="검색">🔍</button>
         <button id="theme-toggle" class="theme-toggle" aria-label="다크 모드 토글">🌙</button>
         <button class="menu-toggle" aria-label="메뉴 토글">
           <span></span>
@@ -41,6 +42,18 @@
   <main class="main">
     {{ content }}
   </main>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="search-modal">
+    <div class="search-container">
+      <div class="search-header">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" class="search-input" placeholder="검색어를 입력하세요..." autocomplete="off">
+        <button id="search-close" class="search-close">✕</button>
+      </div>
+      <ul id="search-results" class="search-results"></ul>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">

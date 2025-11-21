@@ -257,4 +257,94 @@ document.addEventListener('DOMContentLoaded', function() {
       disableDarkMode(); // 기본은 라이트 모드
     }
   }
+
+  // --- Search Functionality ---
+  const searchToggle = document.getElementById('search-toggle');
+  const searchModal = document.getElementById('search-modal');
+  const searchClose = document.getElementById('search-close');
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  
+  let searchData = [];
+
+  if (searchToggle && searchModal) {
+    // Fetch search data
+    fetch('/search.json')
+      .then(response => response.json())
+      .then(data => {
+        searchData = data;
+      })
+      .catch(error => console.error('Error fetching search data:', error));
+
+    // Open modal
+    searchToggle.addEventListener('click', () => {
+      searchModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+      setTimeout(() => searchInput.focus(), 100);
+    });
+
+    // Close modal
+    const closeSearch = () => {
+      searchModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+    };
+
+    searchClose.addEventListener('click', closeSearch);
+    
+    // Close on outside click
+    searchModal.addEventListener('click', (e) => {
+      if (e.target === searchModal) {
+        closeSearch();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+        closeSearch();
+      }
+    });
+
+    // Search logic
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      
+      if (query.length < 2) {
+        searchResults.innerHTML = '';
+        return;
+      }
+
+      const filteredResults = searchData.filter(post => {
+        return post.title.toLowerCase().includes(query) || 
+               post.content.toLowerCase().includes(query) ||
+               post.tags.toLowerCase().includes(query);
+      });
+
+      displayResults(filteredResults);
+    });
+
+    function displayResults(results) {
+      if (results.length === 0) {
+        searchResults.innerHTML = '<li class="search-result-item" style="text-align:center; color:var(--text-gray);">검색 결과가 없습니다.</li>';
+        return;
+      }
+
+      const html = results.map(post => `
+        <li class="search-result-item">
+          <a href="${post.url}" onclick="document.body.style.overflow=''">
+            <span class="search-result-title">${post.title}</span>
+            <p class="search-result-excerpt">${post.content}</p>
+            <div class="search-result-meta">
+              <span>${post.date}</span>
+              <span>${post.tags}</span>
+            </div>
+          </a>
+        </li>
+      `).join('');
+
+      searchResults.innerHTML = html;
+    }
+  }
 });
