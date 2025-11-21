@@ -308,8 +308,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Search logic
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase().trim();
+    const filterTitle = document.getElementById('search-filter-title');
+    const filterContent = document.getElementById('search-filter-content');
+
+    const performSearch = () => {
+      const query = searchInput.value.toLowerCase().trim();
+      const searchTitle = filterTitle.checked;
+      const searchContent = filterContent.checked;
       
       if (query.length < 2) {
         searchResults.innerHTML = '';
@@ -317,32 +322,60 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const filteredResults = searchData.filter(post => {
-        return post.title.toLowerCase().includes(query) || 
-               post.content.toLowerCase().includes(query) ||
-               post.tags.toLowerCase().includes(query);
+        const titleMatch = searchTitle && post.title.toLowerCase().includes(query);
+        const contentMatch = searchContent && post.content.toLowerCase().includes(query);
+        const tagMatch = post.tags.toLowerCase().includes(query); // 태그는 항상 검색
+        
+        return titleMatch || contentMatch || tagMatch;
       });
 
-      displayResults(filteredResults);
-    });
+      displayResults(filteredResults, query);
+    };
 
-    function displayResults(results) {
+    searchInput.addEventListener('input', performSearch);
+    filterTitle.addEventListener('change', performSearch);
+    filterContent.addEventListener('change', performSearch);
+
+    function displayResults(results, query) {
       if (results.length === 0) {
-        searchResults.innerHTML = '<li class="search-result-item" style="text-align:center; color:var(--text-gray);">검색 결과가 없습니다.</li>';
+        searchResults.innerHTML = '<li class="search-result-item" style="text-align:center; color:var(--text-gray); padding: 40px;">검색 결과가 없습니다.</li>';
         return;
       }
 
-      const html = results.map(post => `
+      const html = results.map(post => {
+        // Highlight title
+        let titleHtml = post.title;
+        if (query) {
+          const regex = new RegExp(`(${query})`, 'gi');
+          titleHtml = titleHtml.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Highlight content excerpt
+        let contentExcerpt = post.content;
+        const queryIndex = contentExcerpt.toLowerCase().indexOf(query);
+        if (queryIndex > -1) {
+          const start = Math.max(0, queryIndex - 40);
+          const end = Math.min(contentExcerpt.length, queryIndex + 100);
+          contentExcerpt = '...' + contentExcerpt.substring(start, end) + '...';
+          
+          const regex = new RegExp(`(${query})`, 'gi');
+          contentExcerpt = contentExcerpt.replace(regex, '<span class="search-highlight">$1</span>');
+        } else {
+          contentExcerpt = contentExcerpt.substring(0, 120) + '...';
+        }
+
+        return `
         <li class="search-result-item">
           <a href="${post.url}" onclick="document.body.style.overflow=''">
-            <span class="search-result-title">${post.title}</span>
-            <p class="search-result-excerpt">${post.content}</p>
+            <span class="search-result-title">${titleHtml}</span>
+            <p class="search-result-excerpt">${contentExcerpt}</p>
             <div class="search-result-meta">
-              <span>${post.date}</span>
+              <span class="search-badge">${post.date}</span>
               <span>${post.tags}</span>
             </div>
           </a>
         </li>
-      `).join('');
+      `}).join('');
 
       searchResults.innerHTML = html;
     }
