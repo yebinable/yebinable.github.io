@@ -268,16 +268,12 @@ document.addEventListener('DOMContentLoaded', function() {
   let searchData = [];
 
   if (searchToggle && searchModal) {
-    // Fetch search data
-    fetch('/api/search.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to fetch search data');
-        return response.json();
-      })
-      .then(data => {
-        searchData = data;
-      })
-      .catch(error => console.error('Error fetching search data:', error));
+    // Use embedded search data
+    if (window.searchData) {
+      searchData = window.searchData;
+    } else {
+      console.error('Search data not found');
+    }
 
     // Open modal
     searchToggle.addEventListener('click', () => {
