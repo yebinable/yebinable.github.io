@@ -7,14 +7,19 @@ sitemap:
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in site.pages -%}
   {%- unless page.sitemap.exclude == "yes" or page.sitemap.exclude == true -%}
-    {%- if page.url contains '.xml' or page.url contains 'assets' or page.url contains 'google' or page.url contains '_posts' -%}{%- else %}
+    {%- assign is_excluded = false -%}
+    {%- if page.url contains '.xml' -%}{%- assign is_excluded = true -%}{%- endif -%}
+    {%- if page.url contains 'assets' -%}{%- assign is_excluded = true -%}{%- endif -%}
+    {%- if page.url contains 'google' -%}{%- assign is_excluded = true -%}{%- endif -%}
+    {%- if page.url contains '_posts' -%}{%- assign is_excluded = true -%}{%- endif -%}
+    {%- unless is_excluded %}
   <url>
     <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
     {%- if page.date %}
     <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
     {%- endif %}
   </url>
-    {%- endif -%}
+    {%- endunless -%}
   {%- endunless -%}
 {%- endfor -%}
 {%- for post in site.posts %}
@@ -24,4 +29,3 @@ sitemap:
   </url>
 {%- endfor %}
 </urlset>
-
