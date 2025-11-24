@@ -214,6 +214,7 @@ my-react-app/
 - 뉴스 사이트처럼 실시간으로 데이터가 바뀌어야 하는 곳에는 부적합하다.
 
 - SSG는 데이터 업데이트 시 재빌드가 필요하지만, 최근에는 **ISR**과 같은 기술을 통해 **일정 주기를 설정하여 부분적으로만 재빌드**하여 실시간성 문제를 완화하고 있다고 한다.
+
 ### **단점 2. 개인화 어려움**
 
 페이지가 미리 만들어져 있기 때문에, 로그인한 사용자별로 내용이 달라지는 **개인화된 페이지(Personalized Content)**를 만드는데 제약이 따른다. (이 경우 SSR이나 CSR 혼합 방식이 필요함)
@@ -231,4 +232,4 @@ my-react-app/
 
 - [Google 검색의 작동 방식](https://www.google.com/intl/ko_ALL/search/howsearchworks/how-search-works/organizing-information/)
 - [Google 크롤링 및 색인 생성](https://developers.google.com/search/docs/crawling-indexing?hl=ko)
-- [Google 검색 Essentials](https://developers.google.com/search/docs/essentials?hl=ko](https://developers.google.com/search/docs/essentials?hl=ko)
+- [Google 검색 Essentials](https://developers.google.com/search/docs/essentials?hl=ko)
